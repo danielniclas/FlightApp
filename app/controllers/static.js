@@ -18,10 +18,11 @@ router.get('/', function (req, res) {                //  1.  GET Endpoint:  '/' 
 });
 
 
-router.use(express.static(__dirname + '/../ng'));   //  Express built-in middleware to SERVE STATIC ASSETS (stored in 'ng' directory)
-                                                        //  __directory is a Node variable that points to the current file's directory (controllers)
-                                                        //  Static Assets:  postsctrl.js
+router.use(express.static(__dirname + '/../ng'));  //  Express built-in middleware to SERVE STATIC ASSETS (stored in 'ng' directory)
+                                                   //  __directory is a Node variable that points to the current file's directory (controllers)
+                                                   //  Static Assets:  postsctrl.js
+                //  Current Directory (controllers) + go up one directory > (app)  app/ng  >> use file in the ng directory
 
 
 
-module.exports = router;                            //  EXPORTED as router OBJECT >>  to server-auth.js
+module.exports = router;                            //  EXPORTED as router OBJECT >>  to server.js

@@ -4,13 +4,13 @@
 
 
 
-//create a mongoose Post MODEL to store the posts:
+//create a mongoose Post MODEL:
 
-var db = require('../db');
+var db = require('../db');                  //  REQUIRE MONGOOSE connection with MONGODB
 
-var Post = db.model('Post', {               // Post MONGOOSE MODEL - Create MODEL for the db.  Call model(1,2) on DB
+var Post = db.model('Post', {               // Post MONGOOSE MODEL - Create MODEL for the db.  Call db.model(1,2) on DB
 
-    id: {type: String, required: true},
+    id: {type: String, required: true},     // 1.  Name of MODEL:  Post  2.  MODEL in this case OBJECT
     num: {type: String, required: true},
     code: {type: String, required: true},
     dep: {type: String, required: true},
@@ -22,7 +22,7 @@ var Post = db.model('Post', {               // Post MONGOOSE MODEL - Create MODE
 
 console.log("Mongoose FLIGHT APP Data Model Created");
 
-module.exports = Post;
+module.exports = Post;     //  EXPORT:  db.model(1,2)
 
 
 

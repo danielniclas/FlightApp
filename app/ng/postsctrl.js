@@ -42,16 +42,17 @@ var app = angular.module('myApp', []);
         });
 
 
-        //  Functions:
 
-        // POST  POST  POST
+        // POST  POST  POST      Function
 
         $scope.addPost = function() {
 
+            console.log("In addPost()");
 
             postObject = $scope.flightsModel;       //  <<  OBJECT to POST  -- flightsModel
 
-            postSvc.create(postObject).success(function () {
+            postSvc.create(postObject)
+                .success(function () {
                 console.log("Posting Successful")
             })
         }

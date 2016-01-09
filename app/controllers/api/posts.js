@@ -3,7 +3,7 @@
  */
 
 
-var Post = require('../../models/post');            //  Require the MONGOOSE DATA MODEL from ./models/post(.js)
+var Post = require('../../models/post');            //  Require the MONGOOSE DATA MODEL from ./models/post.js
 var router = require('express').Router();           //  Use Express Router OBJECT - Router Object acts like an App object
 
 
@@ -14,15 +14,15 @@ router.get('/', function (req, res, next) {       //  Parameter 1:  URL path tha
     //  stubbed json at:  http://localhost:3000/api/posts
     //  Parameter 2:  callBack function
 
-    Post.find()                         //  Post is the DATA MODEL.  Call find() on POST MODEL  <<  LOOK IN THE MODEL
+    Post.find()                         //  {{Post is the DATA MODEL}}  Call find() on POST MODEL  <<  LOOK IN THE MODEL
 
-        //.sort('-date')                  //  sort by date
+        //.sort('-date')                //  sort by date
         .exec(function(err, posts) {    //  now execute the function
 
 
             if (err) {return next (err)}
             res.json(posts);                //  RESPONSE:  returning the posts OBJECTS from MONGO as JSON ARRAY
-                                            //  RETURN (response) posts as JSON [ARRAY]
+                                            //  RETURN (response) Post OBJECTS as JSON [ARRAY]
 
         });
 });
@@ -31,7 +31,7 @@ router.get('/', function (req, res, next) {       //  Parameter 1:  URL path tha
 
 router.post('/', function(req, res, next){        //  Parameter 1:  URL path that will respond with post.save
 
-    var post = new Post({                               //  CREATE POST OBJECT - Constructor Function (MONGOOSE Post Object)
+    var post = new Post({                               //  {{CREATE POST OBJECT}} - Constructor Function (MONGOOSE Post Object)
 
         id: req.body.id,                                //  req.body (body of req OBJECT) .username and .body
         num: req.body.num,
@@ -41,7 +41,6 @@ router.post('/', function(req, res, next){        //  Parameter 1:  URL path tha
         price: req.body.price
 
     });
-
 
 
     post.save(function (err, post) {                    //  SAVE MONGOOSE Post Model  -- Save OBJECT to MONGO
@@ -55,4 +54,4 @@ router.post('/', function(req, res, next){        //  Parameter 1:  URL path tha
     })
 });
 
-module.exports = router;        //  EXPORTED as router OBJECT >>  to server-auth.js
+module.exports = router;        //  EXPORTED as router OBJECT >>  to server.js

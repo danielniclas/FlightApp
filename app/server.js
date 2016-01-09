@@ -4,7 +4,7 @@
 
 
 //  EXPRESS App Entry Point
-//  Most Express Apps have a single entry point like this to start an instance of a server
+//  Most Express Apps have a single entry point like this to start an instance of a server ,,
 
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -17,8 +17,8 @@ app.use(bodyParser.json());
 
 //  REQUIRE:  ENDPOINTS  --  These files EXPORT the Router OBJECT
 
-app.use('/api/posts', require('./controllers/api/posts'));  //  .use(1,2)  1.  namespace the routes (ENDPOINT) 2.  Required file
-app.use('/', require('./controllers/static'));              //  Shell Page:  _posts.html
+app.use('/api/posts', require('./controllers/api/posts'));  //  >>  ./controllers/api/posts
+app.use('/', require('./controllers/static'));              //  Shell Page:  ./controllers/static
 
 
 app.listen(3000, function() {
